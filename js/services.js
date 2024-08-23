@@ -6,7 +6,8 @@ import {
   capitalizeFirstLetter,
 } from "./utils";
 
-const API_URL_STOCK = "http://localhost:3001/api/products";
+const API_URL_STOCK =
+  "http://control-de-stock-backend-five.vercel.app/api/products";
 
 // Traer Stock
 export const fetchProducts = async () => {
@@ -56,7 +57,7 @@ export const deleteProduct = async (productId) => {
 export const fetchMovements = async () => {
   try {
     const response = await axios.get(
-      "http://localhost:3001/api/stock-movements"
+      "http://control-de-stock-backend-five.vercel.app/api/stock-movements"
     );
     return response.data;
   } catch (error) {
@@ -74,7 +75,7 @@ export const addMovement = async (nuevoMovimiento) => {
   }
   try {
     const response = await axios.post(
-      "http://localhost:3001/api/stock-movement",
+      "http://control-de-stock-backend-five.vercel.app/api/stock-movement",
       nuevoMovimiento
     );
     return response.data;
@@ -87,9 +88,12 @@ export const addMovement = async (nuevoMovimiento) => {
 // Eliminar movimiento
 export const deleteMovement = async (movementid) => {
   try {
-    await axios.delete("http://localhost:3001/api/stock-movements", {
-      data: { movementid },
-    });
+    await axios.delete(
+      "http://control-de-stock-backend-five.vercel.app/api/stock-movements",
+      {
+        data: { movementid },
+      }
+    );
   } catch (error) {
     console.error("Error al eliminar el producto:", error);
     throw error;

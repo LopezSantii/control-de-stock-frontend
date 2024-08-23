@@ -17,12 +17,12 @@ export const DataProvider = ({ children }) => {
 
   useEffect(() => {
     fetchMovements()
-      .then((data) => setMovements(data))
+      .then((data) => setMovements(data.rows))
       .catch((error) => console.error(error));
 
     fetchProducts()
       .then((data) => {
-        setProducts(data);
+        setProducts(data.rows);
       })
       .catch((error) => console.error(error));
     setRender(false);
