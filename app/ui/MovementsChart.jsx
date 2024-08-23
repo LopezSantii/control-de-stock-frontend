@@ -14,6 +14,7 @@ import {
 
 // Registramos los componentes que vamos a utilizar en Chart.js
 ChartJS.register(
+  Filler,
   CategoryScale,
   LinearScale,
   PointElement,
